@@ -1,64 +1,29 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        my-website
-      </h1>
-      <h2 class="subtitle">
-        it's my website
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+<section class="container">
+  <Head :menu="menu" />
+</section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
+import data from '~/api/data.json'
+import Head from '~/components/head/head'
 export default {
   components: {
-    AppLogo
+    Head
+  },
+  data() {
+    return {
+      menu: []
+    }
+  },
+  asyncData() {
+    return {
+      menu: data.menu
+    }
   }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+@import '~/static/css/reset.css';
 </style>

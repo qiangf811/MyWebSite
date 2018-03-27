@@ -1,0 +1,27 @@
+{
+  "menu": [{
+    "name": "HOME",
+    "href": "#",
+    "id":"1"
+  }, {
+    "name": "ABOUT",
+    "href": "#",
+    "id":"2"
+  }, {
+    "name": "EXPERIENCE",
+    "href": "#",
+    "id":"3"
+  }, {
+    "name": "WORK",
+    "href": "#",
+    "id":"4"
+  }, {
+    "name": "BLOG",
+    "href": "#",
+    "id":"5"
+  },{
+    "name": "CONTACT",
+    "href": "#",
+    "id":"6"
+  }]
+}
