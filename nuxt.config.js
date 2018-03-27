@@ -28,8 +28,15 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: {
-    color: '#3B8070'
+    color: '#c12582',
+    height: '4px'
   },
+  // plugins: [
+  //   {
+  //     src: './node_modules/jquery/dist/jquery.min.js',
+  //     ssr: false
+  //   }
+  // ],
   /*
   ** Build configuration
   */
