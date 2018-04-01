@@ -1,0 +1,33 @@
+{
+  "links": {
+    "home": "主页",
+    "about": "关于",
+    "experience": "经验",
+    "work": "工作",
+    "blog": "博客",
+    "contact": "联系",
+    "english": "英文",
+    "chinese": "中文",
+    "search": "搜索",
+    "lang": "语言",
+    "user": "用户"
+  },
+  "banner": {
+    "hello": "嗨 您好！我是",
+    "firstName": "强",
+    "lastName": "峰",
+    "welcome": "欢迎来到我的个人网站",
+    "getMore": "查看更多"
+  },
+  "skills": {
+    "name": "强 峰",
+    "job": "前端工程师",
+    "description": "Node.js 是一个Javascript运行环境(runtime)。Node.js对一些特殊用例进行了优化，使得V8在非浏览器环境下运行得更好。Hybrid App是指介于web-app、native-app这两者之间的app，兼具“Native App良好用户交互体验的优势”和“Web App跨平台开发的优势”，前端工程师所涵盖的职责范围，已经包含后端、跨平台等多种职能，不能简单地认为只是Web前端工程师。"
+  },
+  "cardInfo": {
+    "phoneNumber": "电话号码",
+    "address": "通讯地址",
+    "emailAddress": "电子邮件",
+    "addressData":"{msg}"
+  }
+}

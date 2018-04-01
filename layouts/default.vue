@@ -1,9 +1,14 @@
 <template>
-  <div>
-    <nuxt/>
+<div style="position:relative">
+  <nuxt/>
+  <div class="footer">
+    <div class="copyright">
+      ©2018 fengqiang powered by vue-ssr and mongodb
+    </div>
+    <a class="beian" href="http://www.miitbeian.gov.cn">皖ICP备18004590号</a>
   </div>
+</div>
 </template>
-
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -16,7 +21,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
 }
@@ -48,5 +55,24 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.footer {
+  position: absolute;
+  bottom: -78px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #797979;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.beian {
+  color: #797979;
 }
 </style>

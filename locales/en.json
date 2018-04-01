@@ -1,0 +1,33 @@
+{
+  "links": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "work": "Work",
+    "blog": "Blog",
+    "contact": "Contact",
+    "english": "English",
+    "chinese": "Chinese",
+    "search": "Search",
+    "lang": "Lang",
+    "user": "User"
+  },
+  "banner": {
+    "hello": "HELLO I AM",
+    "firstName": "QIANG",
+    "lastName": "FENG",
+    "welcome": "WELCOME TO MY WEBSITE",
+    "getMore": "GET MORE ABOUTME"
+  },
+  "skills": {
+    "name": "QIANG FENG",
+    "job": "Web Engineer",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipielit adipielit amet. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umendanam obcaecati illo Ipsam as velt blanditiis debitis Ipsam as velt blanditiis debitis!"
+  },
+  "cardInfo": {
+    "phoneNumber": "PHONE NUMBER",
+    "address": "ADDRESS",
+    "emailAddress": "EMAIL ADDRESS",
+    "addressData":"{msg}"
+  }
+}

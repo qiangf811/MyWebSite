@@ -1,66 +1,63 @@
 <template>
-  <div id="banner">
-    <img src="~/assets/images/banner.jpg" alt="" width="100%" height="100%">
-    <div class="description">
-      <div class="text">
-        <h1 class="hello">HELLO,I AM</h1>
-        <h1 class="fistname">QIANG</h1>
-        <h1 class="lastname">FENG</h1>
-        <h6 class="exe">I HAVE MORE 5 YEARS OF EXPERIENCE</h6>
-        <div class="button">
-          GETMORE ABOUT ME
-        </div>
-      </div>
-    </div>
+<b-jumbotron :fluid="true">
+  <h1 class="hello banner-item">{{$t('banner.hello')}}</h1>
+  <div class="name">
+    <h1 class="fistname banner-item">{{$t('banner.firstName')}}</h1>
+    <h1 class="lastname banner-item">{{$t('banner.lastName')}}</h1>
   </div>
+  <h6 class="exe banner-item">{{$t('banner.welcome')}}</h6>
+  <span variant="success" class="btn banner-btn" :class="defaultClass" @click="gotoAbout">{{$t('banner.getMore')}}</span>
+</b-jumbotron>
 </template>
 <script>
 export default {
   name: "",
   data: () => ({
-
-  })
+    defaultClass:'defaultClass'
+  }),
+  methods: {
+    gotoAbout() {
+      console.log('do something')
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
-#banner
-  position: relative
-  img
+.jumbotron
+  height: 500px
+  background:url('~/assets/images/banner.jpg')
+  background-size: 100%
+  background-repeat: no-repeat
+  .container
     text-align:center
-  .description
-    position: absolute
-    width: 100%
-    height: 100%
-    left:0
-    top:0
-    color:#fff
-    text-align : center
-    .text
-      margin-top: 100px
-      display: inline-block
-      h1
-        font-weight: normal
-      .hello
-        font-size:30px
-      .fistname
-        font-size:140px
-        background: linear-gradient(to right, purple , red)
-        -webkit-background-clip: text
-        color: transparent
-      .lastname
-        font-size:140px
-      .exe
-        font-size:20px
-      .button
-        width: 180px
-        height: 60px
-        line-height:60px
-        margin: 0 auto
-        margin-top: 40px
-        background: linear-gradient(to right, purple , red)
-        text-align:center
-        &:hover
-          font-weight:bold
-          cursor: pointer
-          font-size:16px
+    .banner-item
+      color:#fff
+      margin-bottom: 10px
+    h1
+      font-weight: normal
+    .hello
+      font-size:20px
+    .fistname
+      font-size:60px
+      background: linear-gradient(to right, #a21af0 , #ff0072)
+      -webkit-background-clip: text
+      color: transparent
+    .lastname
+      font-size:60px
+    .exe
+      font-size:20px
+    .btn
+      width: 180px
+      color:#fff
+      height: 40px
+      line-height:28px
+      border:none
+      margin: 0 auto
+      margin-top: 20px
+      background: linear-gradient(to right, #a21af0 , #ff0072)
+      text-align:center
+      &:hover
+        font-weight:bold
+        cursor: pointer
+        font-size:16px
 </style>

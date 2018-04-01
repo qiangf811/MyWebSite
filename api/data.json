@@ -1,27 +1,223 @@
 {
   "menu": [{
-    "name": "HOME",
+    "name": "home",
     "href": "/home",
-    "id":"1"
+    "id": "1"
   }, {
-    "name": "ABOUT",
+    "name": "about",
     "href": "/about",
-    "id":"2"
+    "id": "2"
   }, {
-    "name": "EXPERIENCE",
+    "name": "experience",
     "href": "/experience",
-    "id":"3"
+    "id": "3"
   }, {
-    "name": "WORK",
+    "name": "work",
     "href": "/work",
-    "id":"4"
+    "id": "4"
   }, {
-    "name": "BLOG",
+    "name": "blog",
     "href": "/blog",
-    "id":"5"
-  },{
-    "name": "CONTACT",
+    "id": "5"
+  }, {
+    "name": "contact",
     "href": "/contact",
-    "id":"6"
+    "id": "6"
+  }],
+  "skills": [{
+    "id": "1",
+    "name": "HTML/CSS",
+    "value": 80
+  }, {
+    "id": "2",
+    "name": "NODE",
+    "value": 80
+  }, {
+    "id": "3",
+    "name": "VUE",
+    "value": 80
+  }, {
+    "id": "4",
+    "name": "WEBPACK",
+    "value": 80
+  }, {
+    "id": "5",
+    "name": "ELECTRON",
+    "value": 80
+  }],
+  "cardInfo": {
+    "phoneNumber": "+86 15656024062",
+    "address": {
+      "en": "HaiTangWan In Hefei",
+      "zh": "海棠湾·安徽合肥"
+    },
+    "emailAddress": "fengqiang@iflytek.com"
+  },
+  "services": [{
+    "_id": "1",
+    "name": "BEST SERVICE",
+    "description": "Some quick example text to build on the card and make up the bulk of the card's content.",
+    "image": "/images/icon_service1.png"
+  }, {
+    "_id": "2",
+    "name": "BEST SERVICE",
+    "description": "Some quick example text to build on the card and make up the bulk of the card's content.",
+    "image": "/images/icon_service2.png"
+  }, {
+    "_id": "3",
+    "name": "BEST SERVICE",
+    "description": "Some quick example text to build on the card and make up the bulk of the card's content.",
+    "image": "/images/icon_service3.png"
+  }, {
+    "_id": "4",
+    "name": "BEST SERVICE",
+    "description": "Some quick example text to build on the card and make up the bulk of the card's content.",
+    "image": "/images/icon_service4.png"
+  }, {
+    "_id": "5",
+    "name": "BEST SERVICE",
+    "description": "Some quick example text to build on the card and make up the bulk of the card's content.",
+    "image": "/images/icon_service5.png"
+  }, {
+    "_id": "6",
+    "name": "BEST SERVICE",
+    "description": "Some quick example text to build on the card and make up the bulk of the card's content.",
+    "image": "/images/icon_service6.png"
+  }],
+  "photoes": [{
+    "_id": "1",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1200/g4/M03/02/04/Cg-4WVO2clyIAcS2AB0Efy_Poa0AAPQwAJFfm4AHQSX505.jpg",
+    "type": 1
+  }, {
+    "_id": "4",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1200/g4/M03/02/04/Cg-4WVO2clyIAcS2AB0Efy_Poa0AAPQwAJFfm4AHQSX505.jpg",
+    "type": 3
+  }, {
+    "_id": "5",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1080/g5/M00/02/06/ChMkJ1bKylWIItx2ABPU7KpbrVMAALIaANBIu8AE9UE448.jpg",
+    "type": 3
+  }, {
+    "_id": "6",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1080/g5/M00/02/06/ChMkJ1bKylWIItx2ABPU7KpbrVMAALIaANBIu8AE9UE448.jpg",
+    "type": 3
+  }, {
+    "_id": "9",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1200/g5/M00/02/06/ChMkJlbKylWIUlDJAC7_yi-nYdAAALIaANVkAkALv_i051.jpg",
+    "type": 4
+  }, {
+    "_id": "1",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1200/g5/M00/02/06/ChMkJlbKylWIUlDJAC7_yi-nYdAAALIaANVkAkALv_i051.jpg",
+    "type": 4
+  }, {
+    "_id": "10",
+    "src": "http://desk.fd.zol-img.com.cn/t_s2560x1600/g5/M00/02/06/ChMkJlbKylWIEZfdABjFCaIbrlIAALIaAOEj-sAGMUh746.jpg",
+    "type": 2
+  }, {
+    "_id": "11",
+    "src": "http://desk.fd.zol-img.com.cn/t_s2560x1600/g5/M00/02/06/ChMkJlbKylWIEZfdABjFCaIbrlIAALIaAOEj-sAGMUh746.jpg",
+    "type": 2
+  }, {
+    "_id": "11",
+    "src": "http://desk.fd.zol-img.com.cn/t_s2560x1600/g5/M00/02/06/ChMkJlbKylWIEZfdABjFCaIbrlIAALIaAOEj-sAGMUh746.jpg",
+    "type": 2
+  }, {
+    "_id": "1",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1200/g5/M00/02/06/ChMkJ1bKylaIWfMYACNEf81lIj0AALIaAOf2NEAI0SX836.jpg",
+    "type": 5
+  }, {
+    "_id": "12",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1440x900/g5/M00/02/06/ChMkJlbKylWIAFzmAAGnv3AJmqoAALIaAPDHWgAAafX027.jpg",
+    "type": 5
+  }, {
+    "_id": "13",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1200/g5/M00/02/06/ChMkJ1bKylaIetmxAAOyLnDPboQAALIaAPExT8AA7JG225.jpg",
+    "type": 5
+  }, {
+    "_id": "14",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1200/g5/M00/02/06/ChMkJ1bKylaIVZQ9AA-4N6f2pSYAALIaAPJUWkAD7hP273.jpg",
+    "type": 5
+  }, {
+    "_id": "14",
+    "src": "http://desk.fd.zol-img.com.cn/t_s1920x1200/g5/M00/02/06/ChMkJ1bKylaIVZQ9AA-4N6f2pSYAALIaAPJUWkAD7hP273.jpg",
+    "type": 5
+  }],
+  "photoesLazy": [{
+    "_id": "1",
+    "src": "https://lorempixel.com/400/400/",
+    "type": 1
+  }, {
+    "_id": "4",
+    "src": "https://lorempixel.com/400/400/",
+    "type": 3
+  }, {
+    "_id": "5",
+    "src": "https://lorempixel.com/400/400/",
+    "type": 3
+  }, {
+    "_id": "6",
+    "src": "https://lorempixel.com/400/400/",
+    "type": 3
+  }],
+  "experiences": [{
+    "_id": "1",
+    "company": "PERSONAL ADVANCE",
+    "beginTime": "2014.11",
+    "endTime": "2016.3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
+  }, {
+    "_id": "2",
+    "company": "PERSONAL ADVANCE",
+    "beginTime": "2014.11",
+    "endTime": "2016.3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
+  }, {
+    "_id": "3",
+    "company": "PERSONAL ADVANCE",
+    "beginTime": "2014.11",
+    "endTime": "2016.3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
+  }, {
+    "_id": "4",
+    "company": "PERSONAL ADVANCE",
+    "beginTime": "2014.11",
+    "endTime": "2016.3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
+  }, {
+    "_id": "5",
+    "company": "PERSONAL ADVANCE",
+    "beginTime": "2014.11",
+    "endTime": "2016.3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
+  }],
+  "blogs": [{
+    "_id": "1",
+    "title": "Computer and Using Some Color",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. ",
+    "image": "https://lorempixel.com/300/300/"
+  }, {
+    "_id": "2",
+    "title": "Hello Beatiful Girl",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. ",
+    "image": "https://placekitten.com/g/400/450"
+  }, {
+    "_id": "3",
+    "title": "How To Use Nuxt.js And MongoDB",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. ",
+    "image": "https://lorempixel.com/300/300/"
+  }, {
+    "_id": "4",
+    "title": "What Can I Do For You?",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. ",
+    "image": "https://lorempixel.com/300/300/"
+  }, {
+    "_id": "5",
+    "title": "Computer and Using Some Color",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. ",
+    "image": "https://lorempixel.com/300/300/"
+  }, {
+    "_id": "6",
+    "title": "Computer and Using Some Color",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. ",
+    "image": "https://lorempixel.com/300/300/"
   }]
 }

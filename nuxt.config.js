@@ -1,9 +1,10 @@
+const webpack = require('webpack')
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: 'website',
+    title: 'fengqang web',
     meta: [
       {
         charset: 'utf-8'
@@ -24,6 +25,11 @@ module.exports = {
       }
     ]
   },
+  css: [
+    {
+      src: 'element-ui/lib/theme-chalk/index.css'
+    }
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -31,12 +37,22 @@ module.exports = {
     color: '#c12582',
     height: '4px'
   },
-  // plugins: [
-  //   {
-  //     src: './node_modules/jquery/dist/jquery.min.js',
-  //     ssr: false
-  //   }
-  // ],
+  /**
+   * 使用bootstrapvue
+   */
+  modules: ['bootstrap-vue/nuxt'],
+
+  plugins: [
+    {
+      src: '~plugins/element-ui',
+      ssr: false
+    }, {
+      src: '~/plugins/i18n.js'
+    }
+  ],
+  // router: {
+  //   middleware: 'i18n'
+  // },
   /*
   ** Build configuration
   */
