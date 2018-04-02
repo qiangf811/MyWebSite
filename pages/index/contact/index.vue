@@ -1,6 +1,6 @@
 <template>
   <div id="">
-    <h1>我是联系页</h1>
+    <h1>Hello </h1>
   </div>
 </template>
 <script>

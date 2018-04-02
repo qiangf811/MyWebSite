@@ -1,14 +1,19 @@
 <template>
   <div id="">
-    <h1>我是博客</h1>
+   <Blog :blogs="basedata.blogs" />
   </div>
 </template>
 <script>
+import data from '~/api/data.json'
+import Blog from '~/components/blog/blog'
 export default {
   name: "",
   data: () => ({
-
-  })
+    basedata: data
+  }),
+  components: {
+    Blog
+  }
 }
 </script>
 <style lang="stylus" scoped>

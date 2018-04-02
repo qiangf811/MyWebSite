@@ -1,14 +1,19 @@
 <template>
   <div id="">
-    <h1>我是关于</h1>
+    <Ourservice :services="basedata.services" />
   </div>
 </template>
 <script>
+import data from '~/api/data.json'
+import Ourservice from '~/components/ourservice/ourservice'
 export default {
   name: "",
   data: () => ({
-
-  })
+    basedata: data
+  }),
+  components: {
+    Ourservice
+  }
 }
 </script>
 <style lang="stylus" scoped>

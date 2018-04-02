@@ -1,18 +1,18 @@
 <template>
   <div>
-    <h1>我是经验</h1>
+    <Experience :experiences="basedata.experiences" />
   </div>
 </template>
 <script>
+import data from '~/api/data.json'
+import Experience from '~/components/experience/experience'
 export default {
   name: "",
   data: () => ({
-    height:0
+    basedata: data
   }),
-  created() {
-    // if(process.browser){
-    //   return window.
-    // }
+  components: {
+    Experience
   }
 }
 </script>

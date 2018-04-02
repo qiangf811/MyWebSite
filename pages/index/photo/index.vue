@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+<!-- <b-container>
     <h1 class="module-title">PHOTOES</h1>
     <h6 class="sub-title">this is my beatiful photoes by my beatiful girlfrend haha</h6>
     <b-row>
@@ -14,14 +14,20 @@
         <nuxt-child :key="$route.params.id"/>
         </b-col>
     </b-row>
-</b-container>
+</b-container> -->
+<Photo :photoes="basedata.photoes" />
 </template>
 <script>
+import data from '~/api/data.json'
+import Photo from '~/components/photo/photo'
 export default {
   name: "",
   data: () => ({
-
-  })
+    basedata: data
+  }),
+  components: {
+    Photo
+  }
 }
 </script>
 <style lang="stylus" scoped>
