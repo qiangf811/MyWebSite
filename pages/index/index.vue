@@ -20,11 +20,26 @@ import Photo from '~/components/photo/photo'
 import Experience from '~/components/experience/experience'
 import Blog from '~/components/blog/blog'
 import Contact from '~/components/contact/contact'
+import axios from 'axios'
 export default {
   name: "",
   data: () => ({
-    basedata: data
+    basedata: {}
   }),
+  asyncData() {
+    // We can return a Promise instead of calling the callback
+    return axios.get('http://localhost:8080/api/skills')
+      .then((res) => {
+        console.log(res.data)
+        return { basedata: res.data }
+      })
+  },
+  // created() {
+  //   this.$http.get('/api/skills').then(response => {
+  //     console.log(response)
+  //     this.basedata = response.data
+  //   })
+  // },
   components: {
     Banner,
     Skills,

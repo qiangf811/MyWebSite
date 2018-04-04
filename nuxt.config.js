@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 module.exports = {
   /*
   ** Headers of the page
@@ -42,29 +41,29 @@ module.exports = {
    */
   modules: ['bootstrap-vue/nuxt'],
 
+  serverMiddleware: ['~/api'],
   plugins: [
     {
       src: '~plugins/element-ui',
       ssr: false
     }, {
       src: '~/plugins/i18n.js'
+    }, {
+      src: '~/plugins/vue-resource.js'
     }
   ],
-  // router: {
-  //   middleware: 'i18n'
-  // },
   /*
   ** Build configuration
   */
   build: {
-    vendor: ['element-ui'],
+    // vendor: ['element-ui'],
+    vendor: ['axios'],
     /*
     ** Run ESLint on save
     */
-    extend(config, {isDev, isClient}) {
+    extend (config, {isDev, isClient}) {
       if (isDev && isClient) {
         config.module.rules.push({enforce: 'pre', test: /\.(js|vue)$/, loader: 'eslint-loader', exclude: /(node_modules)/})
-        // config.module.rules.push({loader: 'stylus-loader'})
       }
     }
   }

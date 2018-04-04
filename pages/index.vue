@@ -12,6 +12,7 @@
 <script>
 import data from '~/api/data.json'
 import Head from '~/components/head/head'
+import axios from 'axios'
 export default {
   components: {
     Head
@@ -21,10 +22,18 @@ export default {
       menu: []
     }
   },
+  // asyncData() {
+  //   return {
+  //     menu: data.menu
+  //   }
+  // },
   asyncData() {
-    return {
-      menu: data.menu
-    }
+    // We can return a Promise instead of calling the callback
+    return axios.get('http://localhost:8080/api/skills')
+      .then((res) => {
+        console.log(res.data)
+        return { menu: res.data.menu }
+      })
   },
   beforeCreate() {
     if (process.browser) {

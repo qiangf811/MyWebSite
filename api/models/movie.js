@@ -1,6 +1,6 @@
-//模型的编写
-var mongoose = require('mongoose');
-var MovieSchema = require('../schemas/movie');
-var Movie = mongoose.model('Movie',MovieSchema);
+// 模型的编写
+const mongoose = require('mongoose')
+const MovieSchema = require('../schemas/movie')
+const Movie = mongoose.model('Movie', MovieSchema)
 
-module.exports = Movie;
+module.exports = Movie

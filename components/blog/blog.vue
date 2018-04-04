@@ -16,9 +16,9 @@
 <script>
 import _ from 'lodash'
 export default {
-  name: "",
+  name: '',
   props: ['blogs'],
-  data() {
+  data () {
     return {
       latelyBlogS: _.take(this.blogs, 3)
     }
