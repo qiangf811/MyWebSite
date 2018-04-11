@@ -13,7 +13,7 @@ dist
 .DS_Store
 
 # upload path
-# uploads/*
+uploads
 
 # RSA KEY
 rsa_1024_priv.pem
