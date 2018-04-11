@@ -11,3 +11,10 @@ npm-debug.log
 dist
 
 .DS_Store
+
+# upload path
+# uploads/*
+
+# RSA KEY
+rsa_1024_priv.pem
+rsa_1024_pub.pem

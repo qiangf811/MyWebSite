@@ -23,6 +23,10 @@
     "name": "contact",
     "href": "/contact",
     "id": "6"
+  },{
+    "name": "upload",
+    "href": "/upload/photoes",
+    "id": "7"
   }],
   "skills": [{
     "id": "1",

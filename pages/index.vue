@@ -1,7 +1,7 @@
 <template>
 <section>
   <div>
-    <Head :menu="menu"/>
+    <Head :menu="menu" />
   </div>
   <div class="content">
     <nuxt-child/>
@@ -13,6 +13,7 @@
 import data from '~/api/data.json'
 import Head from '~/components/head/head'
 import axios from 'axios'
+import _ from 'lodash'
 export default {
   components: {
     Head
@@ -22,18 +23,18 @@ export default {
       menu: []
     }
   },
-  // asyncData() {
-  //   return {
-  //     menu: data.menu
-  //   }
-  // },
-  asyncData() {
-    // We can return a Promise instead of calling the callback
-    return axios.get('http://localhost:8080/api/skills')
-      .then((res) => {
-        console.log(res.data)
-        return { menu: res.data.menu }
-      })
+  async asyncData({store,error}) {
+    try {
+      let {data} = await axios.get('http://127.0.0.1:8080/api/menu')
+      if(!store.state.authUser){
+        menu = _.take(data,6)
+      }
+      return {
+        menu: data
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: 'Post not found' })
+    }
   },
   beforeCreate() {
     if (process.browser) {
@@ -41,7 +42,7 @@ export default {
         // window.location = '/mobile'
       }
     }
-  },
+  }
 }
 </script>
 

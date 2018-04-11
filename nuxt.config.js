@@ -1,3 +1,5 @@
+const bodyParser = require('body-parser')
+const session = require('express-session')
 module.exports = {
   /*
   ** Headers of the page
@@ -41,7 +43,17 @@ module.exports = {
    */
   modules: ['bootstrap-vue/nuxt'],
 
-  serverMiddleware: ['~/api'],
+  serverMiddleware: [
+    bodyParser.json(),
+    // session middleware
+    session({
+      secret: 'super-secret-key',
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 }
+    }),
+    '~/api'
+  ],
   plugins: [
     {
       src: '~plugins/element-ui',

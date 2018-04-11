@@ -22,15 +22,13 @@ import Blog from '~/components/blog/blog'
 import Contact from '~/components/contact/contact'
 import axios from 'axios'
 export default {
-  name: "",
   data: () => ({
-    basedata: {}
+    basedata: data
   }),
-  asyncData() {
+  asyncData () {
     // We can return a Promise instead of calling the callback
     return axios.get('http://localhost:8080/api/skills')
       .then((res) => {
-        console.log(res.data)
         return { basedata: res.data }
       })
   },
