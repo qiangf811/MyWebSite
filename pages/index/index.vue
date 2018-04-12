@@ -11,7 +11,6 @@
 </div>
 </template>
 <script>
-import data from '~/api/data.json'
 import Banner from '~/components/banner/banner'
 import Skills from '~/components/skills/skills'
 import CardInfo from '~/components/cardInfo/cardInfo'
@@ -23,21 +22,18 @@ import Contact from '~/components/contact/contact'
 import axios from 'axios'
 export default {
   data: () => ({
-    basedata: data
+    basedata: []
   }),
-  asyncData () {
-    // We can return a Promise instead of calling the callback
-    return axios.get('http://localhost:8080/api/skills')
-      .then((res) => {
-        return { basedata: res.data }
-      })
+  async asyncData ({error}) {
+    try {
+      let {data} = await axios.get(`http://localhost:${process.env.PORT}/api/indexData`)
+      return {
+        basedata: data
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: `Post ERRP:${e}` })
+    }
   },
-  // created() {
-  //   this.$http.get('/api/skills').then(response => {
-  //     console.log(response)
-  //     this.basedata = response.data
-  //   })
-  // },
   components: {
     Banner,
     Skills,

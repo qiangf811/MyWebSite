@@ -64,6 +64,9 @@ module.exports = {
       src: '~/plugins/vue-resource.js'
     }
   ],
+  env: {
+    PORT: 8080
+  },
   /*
   ** Build configuration
   */
