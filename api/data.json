@@ -51,10 +51,7 @@
   }],
   "cardInfo": {
     "phoneNumber": "+86 15656024062",
-    "address": {
-      "en": "HaiTangWan In Hefei",
-      "zh": "海棠湾·安徽合肥"
-    },
+    "address": "HaiTangWan In Hefei",
     "emailAddress": "fengqiang@iflytek.com"
   },
   "services": [{

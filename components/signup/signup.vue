@@ -30,8 +30,12 @@ export default {
     onSubmit (evt) {
       evt.preventDefault()
       this.form.password = md5(this.form.password)
-      this.$http.post('/api/signup', this.form).then(() => {
-        window.location = '/'
+      this.$http.post('/api/signup', this.form).then((response) => {
+        if(response.data.status===200){
+          window.location = '/'
+        } else {
+          console.log(err)
+        }
       }).catch((err) => {
         console.log(err)
       })

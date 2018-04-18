@@ -13,7 +13,7 @@
     </div>
     <div class="col-sm">
       <div class="prograss info-item">
-        <div class="progress-item" v-for="skill in skills" :key="skill.id">
+        <div class="progress-item" v-for="skill in recentSkills" :key="skill.id">
           <h5>{{skill.name}} (<span>{{skill.value}}</span>%)</h5>
           <b-progress height="12px" :max=100 class="mb-3">
             <b-progress-bar class="purple" variant="success" :value="skill.value"></b-progress-bar>
@@ -26,15 +26,18 @@
 </div>
 </template>
 <script>
+import _ from 'lodash'
 export default {
   name: "",
-  data: () => ({
-
-  }),
   props: ['skills'],
+  data() {
+    return {
+      recentSkills: _.take(this.skills, 5)
+    }
+  },
   mounted() {
     this.timer = setInterval(() => {
-      this.skills.forEach(skill => skill.value = parseInt(25 + (Math.random() * 75)))
+      this.recentSkills.forEach(skill => skill.value = parseInt(25 + (Math.random() * 75)))
     }, 2000)
   },
   beforeDestroy() {

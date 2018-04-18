@@ -28,7 +28,6 @@
   "cardInfo": {
     "phoneNumber": "电话号码",
     "address": "通讯地址",
-    "emailAddress": "电子邮件",
-    "addressData":"{msg}"
+    "emailAddress": "电子邮件"
   }
 }

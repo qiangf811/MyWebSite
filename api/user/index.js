@@ -1,3 +1,4 @@
+const url = require('url')
 const User = require('../../mongoose/models/user')
 const login = (req, res) => {
   let _user = req.body
@@ -27,8 +28,9 @@ const login = (req, res) => {
   })
 }
 
-const signup = (res, req) => {
+const signup = (req, res) => {
   let _user = req.body
+  console.log()
   User.findOne({
     username: _user.username
   }, (err, user) => {
@@ -36,14 +38,19 @@ const signup = (res, req) => {
       console.log(err)
     }
     if (user) {
-      return res.redirect('/login')
+      return res.json({status: 500, message: '用户名已存在'})
     } else {
-      user = new User(_user)
+      user = new User({
+        username: _user.username,
+        password: _user.password,
+        phoneNumber: _user.phoneNumber,
+        role: _user.role
+      })
       user.save((err, user) => {
         if (err) {
           console.log(err)
         }
-        res.redirect('/')
+        res.json({status: 200, message: '注册成功'})
       })
     }
   })
@@ -53,6 +60,59 @@ const logout = (req, res) => {
   delete req.session.authUser
   res.redirect('/login')
 }
+
+const fetchAll = (req, res) => {
+  User.fetch(function (err, users) {
+    if (err) { return res.status(500) }
+    res.json(users)
+  })
+}
+const fetchById = (req, res) => {
+  let userId = req.body._id
+  User.findById(userId, function (err, user) {
+    if (err) {
+      return res.status(500)
+    }
+    res.json(user)
+  })
+}
+const update = (req, res) => {
+  let _user = req.body
+  if (_user) {
+    _user.meta.updateAt = Date.now()
+    User.findByIdAndUpdate(_user._id, _user, function (err, user) {
+      if (err) {
+        res.json({status: 500, message: '更新用户信息失败'})
+      }
+      res.json({status: 200, message: '更新用户信息成功'})
+    })
+  } else {
+    res.json({status: 500, message: '参数不正确'})
+  }
+}
+const deleteUser = (req, res) => {
+  req.query = url.parse(req.url, true).query
+  let id = req.query.id
+  if (id) {
+    User.findOneAndRemove({
+      _id: id
+    }, function (err) {
+      if (err) {
+        res.json({status: 500, message: '删除用户失败'})
+      }
+      User.update()
+      res.json({status: 200, message: '删除用户成功'})
+    })
+  } else {
+    res.json({status: 500, message: '参数不正确'})
+  }
+}
 module.exports = {
-  login, signup, logout
+  login,
+  signup,
+  logout,
+  fetchAll,
+  fetchById,
+  update,
+  deleteUser
 }

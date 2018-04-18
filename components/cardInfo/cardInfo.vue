@@ -13,7 +13,7 @@
         <i class="ico-address"></i>
         <div class="content">
           <h5>{{$t('cardInfo.address')}}</h5>
-          <span class="phone-number">{{$t('cardInfo.addressData',{msg:cardInfo.address[lang]})}}</span>
+          <span class="phone-number">{{cardInfo.address}}</span>
         </div>
       </div>
       <div class="col-sm">

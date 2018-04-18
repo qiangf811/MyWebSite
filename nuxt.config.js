@@ -29,6 +29,9 @@ module.exports = {
   css: [
     {
       src: 'element-ui/lib/theme-chalk/index.css'
+    },
+    {
+      src: '~static/css/font.css'
     }
   ],
   /*
@@ -42,9 +45,9 @@ module.exports = {
    * 使用bootstrapvue
    */
   modules: ['bootstrap-vue/nuxt'],
-
   serverMiddleware: [
     bodyParser.json(),
+    bodyParser.urlencoded({ extended: true }),
     // session middleware
     session({
       secret: 'super-secret-key',
@@ -62,27 +65,20 @@ module.exports = {
       src: '~/plugins/i18n.js'
     }, {
       src: '~/plugins/vue-resource.js'
+    }, {
+      src: '~/plugins/vue-echarts.js',
+      ssr: false
     }
   ],
   env: {
     PORT: 8080,
     users: [
-      { id: 1, name: 'Kobe Bryant', number: 24 },
-      { id: 2, name: 'Michael Jordan', number: 23 },
-      { id: 3, name: 'Stephen Curry', number: 30 },
-      { id: 4, name: 'Lebron James', number: 23 },
-      { id: 5, name: 'Kevin Durant', number: 35 },
-      { id: 6, name: 'Kyrie Irving', number: 2 }
-    ]
-  },
-  generate: {
-    routes: [
-      '/manager/1',
-      '/manager/2',
-      '/manager/3',
-      '/manager/4',
-      '/manager/5',
-      '/manager/6'
+      { _id: 1, name: 'users', href: '/users' },
+      { _id: 2, name: 'skills', href: '/skills' },
+      { _id: 3, name: 'menus', href: '/menu' },
+      { _id: 4, name: 'selfInfo', href: '/selfInfo' },
+      { _id: 5, name: 'girdAll', href: '/gridAll' },
+      { _id: 6, name: 'echarts Irving', href: '/echarts' }
     ]
   },
   /*

@@ -28,7 +28,6 @@
   "cardInfo": {
     "phoneNumber": "PHONE NUMBER",
     "address": "ADDRESS",
-    "emailAddress": "EMAIL ADDRESS",
-    "addressData":"{msg}"
+    "emailAddress": "EMAIL ADDRESS"
   }
 }

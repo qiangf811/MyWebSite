@@ -16,13 +16,6 @@
           <b-dropdown-item @click="changeLang('zh')">{{ $t('links.chinese') }}</b-dropdown-item>
           <b-dropdown-item @click="changeLang('en')">{{ $t('links.english') }}</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown v-show="$store.state.authUser" right>
-          <template slot="button-content">
-          <em>{{$t('links.user')}}</em>
-        </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item @click.prevent="signout">Signout</b-dropdown-item>
-        </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

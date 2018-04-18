@@ -12,10 +12,9 @@ let UserSchema = new mongoose.Schema({
     type: Number
   },
   // 0: nomal user
-  // 1: verified user
-  // 2: professonal user
-  // >10: admin
-  // >50: super admin
+  // 1: professonal user
+  // 2: admin
+  // 3: super admin
   role: {
     type: Number,
     default: 0

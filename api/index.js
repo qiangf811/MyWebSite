@@ -35,7 +35,14 @@ router.get('/rsa', securityApi.newRSAkeys)
 router.post('/signup', userApi.signup)
 router.post('/login', userApi.login)
 router.post('/logout', userApi.logout)
+router.get('/users', userApi.fetchAll)
+router.post('/findUser', userApi.fetchById)
+router.post('/updateUser', userApi.update)
+router.delete('/deleteUser', userApi.deleteUser)
 
+// manner api
+router.post('/saveSkill',routerApi.saveSkill)
+router.delete('/deleteSkill',routerApi.deleteSkill)
 // upload api
 router.post('/uploadPhotoes', upload.single('photo'), uploadApi.uploadFiles)
 
