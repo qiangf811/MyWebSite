@@ -18,7 +18,8 @@ const login = (req, res) => {
       }
       if (isMatch) {
         req.session.authUser = {
-          username: _user.username
+          username: _user.username,
+          role: user.role
         }
         res.json({status: 200, message: '登录成功', user: user})
       } else {

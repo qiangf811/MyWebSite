@@ -59,7 +59,7 @@ export default {
   }),
   methods: {
     onSubmit(evt) {
-      if (this.isEdit) {
+      if (!this.isNew) {
         this.$http.post('/api/updateUser', this.form).then((response) => {
           if (response.data.status === 200) {
             this.$emit('refresh')

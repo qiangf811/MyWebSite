@@ -77,7 +77,7 @@ export default {
         this.form.password = encrypt.encrypt(this.form.password)
         await this.$store.dispatch('login', this.form)
         this.showErroMsgFlage = false
-        window.location = '/'
+        window.location = '/admin'
       } catch (e) {
         console.log(this)
         this.errorMsg = e.message

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 let CardInfoSchema = new mongoose.Schema({
-  phoneNumber: Number,
+  phoneNumber: String,
   address: String,
   emailAddress: String
 })

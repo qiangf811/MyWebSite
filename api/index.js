@@ -4,6 +4,7 @@ const multer = require('multer')
 const routerApi = require('./home')
 const userApi = require('./user')
 const securityApi = require('./security')
+const noticeApi = require('./notice')
 const uploadApi = require('./upload')
 const upload = multer({dest: 'uploads/'})
 
@@ -41,8 +42,12 @@ router.post('/updateUser', userApi.update)
 router.delete('/deleteUser', userApi.deleteUser)
 
 // manner api
-router.post('/saveSkill',routerApi.saveSkill)
-router.delete('/deleteSkill',routerApi.deleteSkill)
+router.get('/notice', noticeApi.fetchNotice)
+router.post('/notice', noticeApi.savehNotice)
+router.post('/readNotice', noticeApi.setState)
+router.post('/saveSkill', routerApi.saveSkill)
+router.delete('/deleteSkill', routerApi.deleteSkill)
+router.post('/cardInfo', routerApi.updateCardInfo)
 // upload api
 router.post('/uploadPhotoes', upload.single('photo'), uploadApi.uploadFiles)
 

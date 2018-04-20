@@ -1,45 +1,51 @@
 const url = require('url')
 const _data = require('../data.json')
 const Skill = require('../../mongoose/models/skill')
+const CardInfo = require('../../mongoose/models/cardInfo')
 const _axios = require('axios')
 const PORT = 8080
 const fetchMenu = (req, res) => res.json(_data.menu)
 
 const fetchSkills = (req, res) => {
-  Skill.fetch(function(err, skills) {
-    if (err)
-      return res.status(500)
+  Skill.fetch(function (err, skills) {
+    if (err) { return res.status(500) }
     return res.json(skills)
   })
 }
 
 const saveSkill = (req, res) => {
   let _skill = req.body
-  if (_skill._id) {
-    Skill.findByIdAndUpdate(_skill._id, _skill, function(err,) {
-      if (err)
-        return res.status(500)
-      return res.json({status: 200, message: '保存成功'})
-    })
+  if (Object.keys(_skill).length) {
+    if (_skill._id) {
+      Skill.findByIdAndUpdate(_skill._id, _skill, function (err, skill) {
+        if (err) {
+          return res.status(500)
+        }
+        return res.json({status: 200, message: '保存成功'})
+      })
+    } else {
+      Skill.findOne({
+        name: _skill.name
+      }, function (err, row) {
+        if (err) {
+          return res.status(400).json(err)
+        }
+        if (row) {
+          return res.json({status: 300, message: '名称已存在'})
+        } else {
+          let skill = new Skill(_skill)
+          skill.save((err, row) => {
+            if (err) {
+              console.log(err)
+              return res.status(400).json(err)
+            }
+            res.json({status: 200, message: '保存成功'})
+          })
+        }
+      })
+    }
   } else {
-    Skill.findOne({
-      name: _skill.name
-    }, function(err, row) {
-      if (err)
-        return res.status(400).json(err)
-      if (row) {
-        return res.json({status: 300, message: '名称已存在'})
-      } else {
-        skill = new Skill(_skill)
-        skill.save((err, row) => {
-          if (err) {
-            console.log(err)
-            return res.status(400).json(err)
-          }
-          res.json({status: 200, message: '保存成功'})
-        })
-      }
-    })
+    res.json({status: 500, message: '参数不正确'})
   }
 }
 
@@ -49,7 +55,7 @@ const deleteSkill = (req, res) => {
   if (id) {
     Skill.findOneAndRemove({
       _id: id
-    }, function(err) {
+    }, function (err) {
       if (err) {
         res.json({status: 500, message: '删除用户失败'})
       }
@@ -60,7 +66,37 @@ const deleteSkill = (req, res) => {
   }
 }
 
-const fetchCardInfo = (req, res) => res.json(_data.cardInfo)
+const fetchCardInfo = (req, res) => {
+  CardInfo.fetch(function (err, cradInfo) {
+    if (err) { return res.status(500) }
+    return res.json(cradInfo[0])
+  })
+}
+
+const updateCardInfo = (req, res) => {
+  let _cardInfo = req.body
+  if (Object.keys(_cardInfo).length) {
+    if (_cardInfo._id) {
+      CardInfo.findByIdAndUpdate(_cardInfo._id, _cardInfo, function (err, cardInfo) {
+        if (err) {
+          return res.status(500)
+        }
+        return res.json({status: 200, message: '保存成功'})
+      })
+    } else {
+      let cardInfo = new CardInfo(_cardInfo)
+      cardInfo.save((err, row) => {
+        if (err) {
+          console.log(err)
+          return res.status(400).json(err)
+        }
+        res.json({status: 200, message: '保存成功'})
+      })
+    }
+  } else {
+    res.status(400).json({status: 500, message: '参数不正确'})
+  }
+}
 
 const fetchServices = (req, res) => res.json(_data.services)
 
@@ -71,7 +107,7 @@ const fetchExperiences = (req, res) => res.json(_data.experiences)
 const fetchBlogs = (req, res) => res.json(_data.blogs)
 
 const fetchIndexData = (req, res) => {
-  const fetchData = async function() {
+  const fetchData = async function () {
     try {
       // http://127.0.0.1:${PORT}
       let skills = await _axios.get(`http://127.0.0.1:${PORT}/api/skills`)
@@ -110,5 +146,6 @@ module.exports = {
   fetchBlogs,
   fetchIndexData,
   saveSkill,
-  deleteSkill
+  deleteSkill,
+  updateCardInfo
 }

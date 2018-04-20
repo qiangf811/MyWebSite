@@ -5,7 +5,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'fengqang web',
+    title: 'fengleaf',
     meta: [
       {
         charset: 'utf-8'
@@ -38,8 +38,8 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: {
-    color: '#c12582',
-    height: '4px'
+    color: '#28a745',
+    height: '2px'
   },
   /**
    * 使用bootstrapvue
@@ -53,7 +53,7 @@ module.exports = {
       secret: 'super-secret-key',
       resave: false,
       saveUninitialized: false,
-      cookie: { maxAge: 60000 }
+      cookie: { maxAge: 60 * 60000 }
     }),
     '~/api'
   ],
@@ -78,7 +78,7 @@ module.exports = {
       { _id: 3, name: 'menus', href: '/menu' },
       { _id: 4, name: 'selfInfo', href: '/selfInfo' },
       { _id: 5, name: 'girdAll', href: '/gridAll' },
-      { _id: 6, name: 'echarts Irving', href: '/echarts' }
+      { _id: 6, name: 'echarts', href: '/echarts' }
     ]
   },
   /*

@@ -5,23 +5,23 @@
       <h1 class="module-title">CONTACT ME</h1>
       <h6 class="sub-title">these experiences are so good to me ha</h6>
     </div>
-    <b-form @submit="onSubmit" class="index-form">
+    <b-form @submit.prevent="onSubmit" class="index-form">
       <b-form-group id="exampleInputGroup1">
-        <b-form-input id="exampleInput1" type="text" v-model="form.name" required placeholder="Name">
+        <b-form-input id="exampleInput1" type="text" v-model="form.from" required placeholder="Name">
         </b-form-input>
       </b-form-group>
 
       <b-form-group id="exampleInputGroup2">
-        <b-form-input id="exampleInput2" type="text" v-model="form.phone" required placeholder="PhoneNumber">
+        <b-form-input id="exampleInput2" type="text" v-model="form.phoneNumber" required placeholder="PhoneNumber">
         </b-form-input>
       </b-form-group>
 
-      <b-form-group id="exampleInputGroup3" >
+      <b-form-group id="exampleInputGroup3">
         <b-form-input id="exampleInput3" type="email" v-model="form.email" required placeholder="Email">
         </b-form-input>
       </b-form-group>
 
-      <b-form-group id="exampleInputGroup4" >
+      <b-form-group id="exampleInputGroup4">
         <b-form-textarea id="textarea4" v-model="form.message" placeholder="Your Message" :rows="3" :max-rows="6">
         </b-form-textarea>
       </b-form-group>
@@ -59,8 +59,8 @@
       <button class="btn form-btn" type="submit">SENG MESSAGE</button>
     </b-form> -->
   </b-container>
-  <b-modal ref="myModalRef"  title="Message" class="model">
-    <p class="my-4">Tank You For Your Message!</p>
+  <b-modal ref="myModalRef" title="Message" class="model">
+    <p class="my-4">{{modalMessage}}</p>
     <!-- <b-btn class="mt-3" variant="success" @click="hideModal">Close Me</b-btn> -->
   </b-modal>
 </div>
@@ -71,20 +71,34 @@ export default {
     return {
       form: {
         email: '',
-        name: '',
-        phone: '',
+        from: '',
+        phoneNumber: '',
         message: ''
-      }
+      },
+      modalMessage: ''
     }
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault()
-      this.$refs.myModalRef.show()
-      // alert(JSON.stringify(this.form));
+    async onSubmit(evt) {
+      try {
+        let {
+          data
+        } = await this.$http.post('/api/notice', this.form)
+        if (data.status === 200) {
+          this.showModal('Tank You For Your Message!')
+        } else {
+          this.showModal('sorry the network err')
+        }
+      } catch (e) {
+        this.showModal('sorry the network err')
+      }
     },
-    hideModal(){
+    hideModal() {
       this.$refs.myModalRef.hide()
+    },
+    showModal(msg) {
+      this.modalMessage = msg
+      this.$refs.myModalRef.show()
     }
   }
 }
