@@ -1,8 +1,12 @@
 const mongoose = require('mongoose')
 let CardInfoSchema = new mongoose.Schema({
+  name: String,
+  jobName: String,
   phoneNumber: String,
   address: String,
-  emailAddress: String
+  emailAddress: String,
+  workYears: Number,
+  description: String
 })
 
 CardInfoSchema.statics = {

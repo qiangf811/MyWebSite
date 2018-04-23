@@ -5,10 +5,11 @@ const routerApi = require('./home')
 const userApi = require('./user')
 const securityApi = require('./security')
 const noticeApi = require('./notice')
+const menuApi = require('./menu')
 const uploadApi = require('./upload')
 const upload = multer({dest: 'uploads/'})
-
 mongodb.connection()
+
 const app = express()
 const router = express.Router()
 
@@ -22,9 +23,11 @@ router.use((req, res, next) => {
 })
 
 // index page  api
-router.get('/menu', routerApi.fetchMenu)
-router.get('/skills', routerApi.fetchSkills)
-router.get('/cardInfo', routerApi.fetchCardInfo)
+router.get('/menu', menuApi.fetchMenu)
+router.post('/saveMenu', menuApi.saveMenu)
+router.delete('/deleteMenu', menuApi.deleteMenu)
+router.post('/sortMenu', menuApi.sortMenu)
+
 router.get('/services', routerApi.fetchServices)
 router.get('/photoes', routerApi.fetchPhotoes)
 router.get('/experiences', routerApi.fetchExperiences)
@@ -45,8 +48,12 @@ router.delete('/deleteUser', userApi.deleteUser)
 router.get('/notice', noticeApi.fetchNotice)
 router.post('/notice', noticeApi.savehNotice)
 router.post('/readNotice', noticeApi.setState)
+
+router.get('/skills', routerApi.fetchSkills)
 router.post('/saveSkill', routerApi.saveSkill)
 router.delete('/deleteSkill', routerApi.deleteSkill)
+
+router.get('/cardInfo', routerApi.fetchCardInfo)
 router.post('/cardInfo', routerApi.updateCardInfo)
 // upload api
 router.post('/uploadPhotoes', upload.single('photo'), uploadApi.uploadFiles)

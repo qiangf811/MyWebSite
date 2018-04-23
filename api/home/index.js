@@ -4,7 +4,6 @@ const Skill = require('../../mongoose/models/skill')
 const CardInfo = require('../../mongoose/models/cardInfo')
 const _axios = require('axios')
 const PORT = 8080
-const fetchMenu = (req, res) => res.json(_data.menu)
 
 const fetchSkills = (req, res) => {
   Skill.fetch(function (err, skills) {
@@ -137,7 +136,6 @@ const fetchIndexData = (req, res) => {
 }
 
 module.exports = {
-  fetchMenu,
   fetchSkills,
   fetchCardInfo,
   fetchServices,

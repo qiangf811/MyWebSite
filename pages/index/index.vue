@@ -1,8 +1,7 @@
 <template>
 <div>
   <Banner/>
-  <Skills :skills="basedata.skills" />
-  <CardInfo :cardInfo="basedata.cardInfo" />
+  <CardInfo :cardInfo="basedata.cardInfo" :skills="basedata.skills"/>
   <Ourservice :services="basedata.services" />
   <Photo :photoes="basedata.photoes" />
   <Experience :experiences="basedata.experiences" />
@@ -12,7 +11,6 @@
 </template>
 <script>
 import Banner from '~/components/banner/banner'
-import Skills from '~/components/skills/skills'
 import CardInfo from '~/components/cardInfo/cardInfo'
 import Ourservice from '~/components/ourservice/ourservice'
 import Photo from '~/components/photo/photo'
@@ -36,7 +34,6 @@ export default {
   },
   components: {
     Banner,
-    Skills,
     CardInfo,
     Ourservice,
     Photo,

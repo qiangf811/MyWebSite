@@ -74,10 +74,9 @@ module.exports = {
     PORT: 8080,
     users: [
       { _id: 1, name: 'users', href: '/users' },
-      { _id: 2, name: 'skills', href: '/skills' },
       { _id: 3, name: 'menus', href: '/menu' },
+      { _id: 2, name: 'skills', href: '/skills' },
       { _id: 4, name: 'selfInfo', href: '/selfInfo' },
-      { _id: 5, name: 'girdAll', href: '/gridAll' },
       { _id: 6, name: 'echarts', href: '/echarts' }
     ]
   },

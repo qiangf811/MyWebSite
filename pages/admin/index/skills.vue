@@ -26,7 +26,7 @@
     </template>
   </b-table>
   <skillForm ref="formsss" @refresh="refresh"></skillForm>
-  <confirmbox ref="confirm" :confrimAction="deleteUser" :data="rowItem" :msg="deleteTip" />
+  <confirmbox ref="confirm" :confrimAction="deleteUser" :confirmData="rowItem" :confirmMsg="deleteTip" />
 </div>
 </template>
 <script>

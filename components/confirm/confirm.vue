@@ -1,35 +1,44 @@
 <template>
 <b-modal id="confirmbox" centered hide-footer title="Tips" ref="confirmbox">
-  <p>{{msg}}</p>
+  <p>{{confirmMsg}}</p>
   <div class="c-btns">
-    <b-button type="submit" variant="primary" @click.prevent="hideModal">Cancel</b-button>
-    <b-button type="reset" variant="danger" @click.prevent="doSureAction">Sure</b-button>
+    <b-button type="submit" v-show="isConfirm" variant="primary" @click.prevent="hideModal">Cancel</b-button>
+    <b-button variant="danger" @click.prevent="doSureAction">Sure</b-button>
   </div>
 </b-modal>
 </template>
 <script>
 export default {
-  name: "",
   props: {
     confrimAction: {
-      type: Function
+      type: Function,
+      default: () => {
+        return new Promise((resolve, reject) => {
+          resolve()
+        })
+      }
     },
-    msg: {
-      type: String
+    confirmMsg: {
+      type: String,
+      default: '你确定删除此项数据吗？'
     },
-    data:{
+    confirmData: {
       type: Object
+    },
+    isConfirm: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {
-    showModal() {
+    showModal () {
       this.$refs.confirmbox.show()
     },
-    hideModal() {
+    hideModal () {
       this.$refs.confirmbox.hide()
     },
-    doSureAction(){
-      this.confrimAction(this.data).then(()=>{
+    doSureAction () {
+      this.confrimAction(this.confirmData).then(() => {
         this.hideModal()
       }).catch((err) => {
         console.log(err)

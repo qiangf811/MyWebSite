@@ -28,7 +28,6 @@
 <script>
 import md5 from 'blueimp-md5'
 export default {
-  name: "",
   props: ['rowData'],
   data: () => ({
     isNew: false,
@@ -37,35 +36,34 @@ export default {
       username: '',
       phoneNumber: '',
       password: '',
-      role: '',
+      role: ''
     },
     role: [{
-        text: '超级管理员',
-        value: 3
-      },
-      {
-        text: '管理员',
-        value: 2
-      },
-      {
-        text: '会员用户',
-        value: 1
-      },
-      {
-        text: '普通用户',
-        value: 0
-      }
-    ],
+      text: '超级管理员',
+      value: 3
+    },
+    {
+      text: '管理员',
+      value: 2
+    },
+    {
+      text: '会员用户',
+      value: 1
+    },
+    {
+      text: '普通用户',
+      value: 0
+    }]
   }),
   methods: {
-    onSubmit(evt) {
+    onSubmit (evt) {
       if (!this.isNew) {
         this.$http.post('/api/updateUser', this.form).then((response) => {
           if (response.data.status === 200) {
             this.$emit('refresh')
             this.hideMoadl()
           } else {
-            console.log(err)
+            console.log(response.message)
           }
         }).catch((err) => {
           console.log(err)
@@ -83,9 +81,8 @@ export default {
           console.log(err)
         })
       }
-
     },
-    showModal(isNew) {
+    showModal (isNew) {
       if (isNew) {
         delete this.form._id
         this.form.username = ''
@@ -97,7 +94,7 @@ export default {
       this.isNew = isNew ? true : false
       this.$refs.myModal.show()
     },
-    hideMoadl() {
+    hideMoadl () {
       this.$refs.myModal.hide()
     }
   }

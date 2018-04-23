@@ -26,7 +26,7 @@
     </template>
   </b-table>
   <userFrom ref="userForm" @refresh="refresh"></userFrom>
-  <confirmbox ref="confirm" :confrimAction="deleteUser" :data="rowItem" :msg="deleteTip" />
+  <confirmbox ref="confirm" :confrimAction="deleteUser" :confirmData="rowItem" :confirmMsg="deleteTip" />
 </div>
 </template>
 <script>
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       filter: null,
-      deleteTip: '',
+      deleteTip: '你确定删除此条数据吗？',
       rowItem: {},
       fields: [
         'index',
@@ -111,7 +111,6 @@ export default {
     },
     rowClick(item, index, e) {
       if (e.target.className.includes('Delete')) {
-        this.deleteTip = '你确定删除改用户吗？'
         this.rowItem = item
         this.$refs.confirm.showModal()
       } else if (e.target.className.includes('Edit')) {

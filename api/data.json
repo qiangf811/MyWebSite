@@ -2,31 +2,38 @@
   "menu": [{
     "name": "home",
     "href": "/home",
-    "id": "1"
+    "id": "1",
+    "role":0
   }, {
     "name": "about",
     "href": "/about",
-    "id": "2"
+    "id": "2",
+    "role":0
   }, {
     "name": "experience",
     "href": "/experience",
-    "id": "3"
+    "id": "3",
+    "role":0
   }, {
     "name": "work",
     "href": "/work",
-    "id": "4"
+    "id": "4",
+    "role":0
   }, {
     "name": "blog",
     "href": "/blog",
-    "id": "5"
+    "id": "5",
+    "role":0
   }, {
     "name": "contact",
     "href": "/contact",
-    "id": "6"
+    "id": "6",
+    "role":0
   },{
     "name": "upload",
     "href": "/upload/photoes",
-    "id": "7"
+    "id": "7",
+    "role":3
   }],
   "skills": [{
     "id": "1",
