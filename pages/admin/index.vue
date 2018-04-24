@@ -5,8 +5,8 @@
       <b-col sm="2" class="sidebar" id="sidebar">
         <ul class="players">
           <li class="NavBar-title">NavBar</li>
-          <li v-for="user in users" :key="user.id" class="clearfix">
-            <span class="icon-uniE62E"></span>
+          <li v-for="(user,index) in users" :key="user.id" class="clearfix">
+            <span :class="'icon-'+iconMaps[index]"></span>
             <router-link active-class="router-link-active" :to="'/admin'+user.href">{{ user.name }}</router-link>
           </li>
         </ul>
@@ -62,15 +62,13 @@
 </div>
 </template>
 <script>
-import path from 'path'
 import axios from 'axios'
-import _ from 'lodash'
 import moment from 'moment'
 import NoticeDetail from '~/components/notice/detail'
 export default {
   layout: 'admin',
   middleware: 'auth',
-  async asyncData({
+  async asyncData ({
     env,
     store
   }) {
@@ -84,17 +82,18 @@ export default {
         role: 0
       },
       notices: data,
-      users: env.users,
+      users: env.users
     }
   },
-  data() {
+  data () {
     return {
+      iconMaps: ['uniE605', 'uniE60F', 'uniE62E', 'uniE648', 'uniE64F', 'uniE664', 'uniE677', 'uniE6C0'],
       isShowNotice: false,
       isShowUser: false
     }
   },
   methods: {
-    async fetchNotice() {
+    async fetchNotice () {
       try {
         let {
           data
@@ -104,12 +103,12 @@ export default {
         console.error(e)
       }
     },
-    formaterTime(time) {
+    formaterTime (time) {
       if (time) {
         return moment(time).fromNow()
       }
     },
-    async logout() {
+    async logout () {
       try {
         await this.$store.dispatch('logout')
         window.location = '/login'
@@ -117,14 +116,14 @@ export default {
         console.log(e)
       }
     },
-    showNoticeDetail(notice){
+    showNoticeDetail (notice) {
       this.$refs.noticeModal.show(notice)
     }
   },
-  mounted() {
+  mounted () {
     this.timer = setInterval(this.fetchNotice, 2000)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     clearInterval(this.timer)
     this.timer = null
   },

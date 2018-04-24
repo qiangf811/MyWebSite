@@ -78,6 +78,7 @@ module.exports = {
       { _id: 2, name: 'skills', href: '/skills' },
       { _id: 4, name: 'selfInfo', href: '/selfInfo' },
       { _id: 5, name: 'experiences', href: '/experiences' },
+      { _id: 7, name: 'photos', href: '/photos' },
       { _id: 6, name: 'echarts', href: '/echarts' }
     ]
   },

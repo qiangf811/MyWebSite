@@ -57,6 +57,8 @@ export default {
       .time
         font-weight:bold
     .description
+      height: 78px
+      overflow: hidden
       padding: 0 30px
       position: relative
       text-align:left
