@@ -8,22 +8,22 @@
     <div v-for="(experience,index) in experiences" :key="index">
       <b-row v-if="index%2===0" class="item">
         <b-col :sm="3" class="time-container">
-          <h5>{{experience.company}}</h5>
-          <h6 class="time">{{experience.beginTime}}-{{experience.endTime}}</h6>
+          <h5>{{experience.title}}</h5>
+          <h6 class="time">{{experience.time}}</h6>
         </b-col>
         <b-col :sm="9">
-          <p class="description">{{experience.description}}</p>
+          <p class="description">{{experience.content}}</p>
           <i class="split-icon"></i>
         </b-col>
       </b-row>
       <b-row v-else class="item">
         <b-col sm="9">
-          <p class="description reserve">{{experience.description}}</p>
+          <p class="description reserve">{{experience.content}}</p>
           <i class="split-icon reserve"></i>
         </b-col>
         <b-col sm="3" class="time-container reserve">
-          <h5>{{experience.company}}</h5>
-          <h6 class="time">{{experience.beginTime}}-{{experience.endTime}}</h6>
+          <h5>{{experience.title}}</h5>
+          <h6 class="time">{{experience.time}}</h6>
         </b-col>
       </b-row>
     </div>
@@ -32,7 +32,6 @@
 </template>
 <script>
 export default {
-  name: "",
   data: () => ({}),
   props: ['experiences']
 }

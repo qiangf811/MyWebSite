@@ -6,6 +6,7 @@ const userApi = require('./user')
 const securityApi = require('./security')
 const noticeApi = require('./notice')
 const menuApi = require('./menu')
+const experienceApi = require('./experience')
 const uploadApi = require('./upload')
 const upload = multer({dest: 'uploads/'})
 mongodb.connection()
@@ -22,15 +23,19 @@ router.use((req, res, next) => {
   next()
 })
 
-// index page  api
+// menu api
 router.get('/menu', menuApi.fetchMenu)
 router.post('/saveMenu', menuApi.saveMenu)
 router.delete('/deleteMenu', menuApi.deleteMenu)
 router.post('/sortMenu', menuApi.sortMenu)
 
+// experiences api
+router.get('/experiences', experienceApi.fetchExperience)
+router.post('/saveExperience', experienceApi.saveExperience)
+router.delete('/deleteExperience', experienceApi.deleteExperience)
+
 router.get('/services', routerApi.fetchServices)
 router.get('/photoes', routerApi.fetchPhotoes)
-router.get('/experiences', routerApi.fetchExperiences)
 router.get('/blogs', routerApi.fetchBlogs)
 router.get('/indexData', routerApi.fetchIndexData)
 
@@ -44,15 +49,17 @@ router.post('/findUser', userApi.fetchById)
 router.post('/updateUser', userApi.update)
 router.delete('/deleteUser', userApi.deleteUser)
 
-// manner api
+// notice api
 router.get('/notice', noticeApi.fetchNotice)
 router.post('/notice', noticeApi.savehNotice)
 router.post('/readNotice', noticeApi.setState)
 
+// skills api
 router.get('/skills', routerApi.fetchSkills)
 router.post('/saveSkill', routerApi.saveSkill)
 router.delete('/deleteSkill', routerApi.deleteSkill)
 
+// cardInfo api
 router.get('/cardInfo', routerApi.fetchCardInfo)
 router.post('/cardInfo', routerApi.updateCardInfo)
 // upload api

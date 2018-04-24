@@ -77,7 +77,6 @@ export default {
       },
       'tools'
     ],
-    menuForm: menuForm,
     async dataProvider () {
       try {
         let {

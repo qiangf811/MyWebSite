@@ -168,31 +168,31 @@
   }],
   "experiences": [{
     "_id": "1",
-    "company": "PERSONAL ADVANCE",
+    "title": "PERSONAL ADVANCE",
     "beginTime": "2014.11",
     "endTime": "2016.3",
     "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
   }, {
     "_id": "2",
-    "company": "PERSONAL ADVANCE",
+    "title": "PERSONAL ADVANCE",
     "beginTime": "2014.11",
     "endTime": "2016.3",
     "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
   }, {
     "_id": "3",
-    "company": "PERSONAL ADVANCE",
+    "title": "PERSONAL ADVANCE",
     "beginTime": "2014.11",
     "endTime": "2016.3",
     "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
   }, {
     "_id": "4",
-    "company": "PERSONAL ADVANCE",
+    "title": "PERSONAL ADVANCE",
     "beginTime": "2014.11",
     "endTime": "2016.3",
     "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"
   }, {
     "_id": "5",
-    "company": "PERSONAL ADVANCE",
+    "title": "PERSONAL ADVANCE",
     "beginTime": "2014.11",
     "endTime": "2016.3",
     "description": "Lorem ipsum dolor sit amet, consectetur adipielit. Sunt sed ad possimus magm maiores.Ipa Lorem ipsum dolor sit amet, consectetur adiic Sunt sed ad posimus magnam maores. Ipsam as velt blanditiis debitis consequuntur mollita umenda nam obcaecati illo!"

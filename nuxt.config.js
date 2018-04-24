@@ -77,6 +77,7 @@ module.exports = {
       { _id: 3, name: 'menus', href: '/menu' },
       { _id: 2, name: 'skills', href: '/skills' },
       { _id: 4, name: 'selfInfo', href: '/selfInfo' },
+      { _id: 5, name: 'experiences', href: '/experiences' },
       { _id: 6, name: 'echarts', href: '/echarts' }
     ]
   },
@@ -85,7 +86,7 @@ module.exports = {
   */
   build: {
     // vendor: ['element-ui'],
-    vendor: ['axios'],
+    vendor: ['axios', 'moment', 'lodash'],
     /*
     ** Run ESLint on save
     */
