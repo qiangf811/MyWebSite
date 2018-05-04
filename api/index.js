@@ -9,6 +9,7 @@ const menuApi = require('./menu')
 const experienceApi = require('./experience')
 const uploadApi = require('./upload')
 const upload = multer({dest: 'uploads/'})
+const tokenApi = require('./token')
 mongodb.connection()
 
 const app = express()
@@ -64,6 +65,10 @@ router.get('/cardInfo', routerApi.fetchCardInfo)
 router.post('/cardInfo', routerApi.updateCardInfo)
 // upload api
 router.post('/uploadPhotoes', upload.single('photo'), uploadApi.uploadFiles)
+
+router.get('/push-token', tokenApi.fetchToken)
+router.post('/push-token', tokenApi.saveToken)
+
 
 module.exports = {
   path: '/api',
