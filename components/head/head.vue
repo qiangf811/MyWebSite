@@ -5,7 +5,7 @@
     <b-navbar-brand href="/">FengQiang</b-navbar-brand>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
-        <b-nav-item v-for="item in menu" v-if="menuShow(item.role)" :key="item.id" :to="item.href" active-class="router-link-active">{{$t('links["'+item.name+'"]') }}</b-nav-item>
+        <b-nav-item v-for="item in mainMenu" :key="item.id" :to="item.href" active-class="router-link-active">{{$t('links["'+item.name+'"]') }}</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-form>
@@ -27,6 +27,11 @@ export default {
 
   }),
   props: ['menu'],
+  computed: {
+    mainMenu () {
+      return this.menu.filter(item => this.menuShow(item.role))
+    }
+  },
   methods: {
     changeLang (lang) {
       this.$store.commit('SET_LANG', lang)

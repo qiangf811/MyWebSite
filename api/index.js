@@ -69,7 +69,6 @@ router.post('/uploadPhotoes', upload.single('photo'), uploadApi.uploadFiles)
 router.get('/push-token', tokenApi.fetchToken)
 router.post('/push-token', tokenApi.saveToken)
 
-
 module.exports = {
   path: '/api',
   handler: router
