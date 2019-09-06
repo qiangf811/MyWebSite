@@ -67,7 +67,7 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       form: {
         email: '',
@@ -79,7 +79,7 @@ export default {
     }
   },
   methods: {
-    async onSubmit(evt) {
+    async onSubmit (evt) {
       try {
         let {
           data
@@ -93,10 +93,10 @@ export default {
         this.showModal('sorry the network err')
       }
     },
-    hideModal() {
+    hideModal () {
       this.$refs.myModalRef.hide()
     },
-    showModal(msg) {
+    showModal (msg) {
       this.modalMessage = msg
       this.$refs.myModalRef.show()
     }
@@ -108,7 +108,7 @@ export default {
   height: 650px
   margin-top: 60px
   padding: 60px 0
-  background: url('~/assets/images/contact.png')
+  background: url('~assets/images/contact.png')
   background-size: 100%
   background-repeat: no-repeat
   background-position:center

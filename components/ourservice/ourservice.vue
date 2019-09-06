@@ -30,7 +30,7 @@
             <b-row>
               <b-col sm="4">
                 <div class="avatar">
-                  <img src="~/assets/images/avatar.png" alt="">
+                  <img src="~assets/images/avatar.png" alt="">
                 </div>
               </b-col>
               <b-col sm="8">
@@ -47,7 +47,7 @@
 </template>
 <script>
 export default {
-  name: "",
+  name: '',
   props: ['services'],
   data: () => ({
 
@@ -76,7 +76,7 @@ export default {
     position: relative
     .bg
       height: 400px
-      background:url('~/assets/images/banner-mountain.png')
+      background:url('~assets/images/banner-mountain.png')
       background-size: 100%
       background-repeat: no-repeat
       background-position:center

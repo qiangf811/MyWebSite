@@ -21,10 +21,10 @@ NoticeSchema.pre('save', function (nuxt) {
 
 NoticeSchema.statics = {
   fetch: function (cb) {
-    return this.find({hasRead: false}).sort({createAt: 'desc'}).exec(cb)
+    return this.find({ hasRead: false }).sort({ createAt: 'desc' }).exec(cb)
   },
   findById: function (id, cb) {
-    return this.findOne({_id: id}).exec(cb)
+    return this.findOne({ _id: id }).exec(cb)
   }
 }
 

@@ -8,7 +8,7 @@ PushTokenSchema.statics = {
     return this.find({}).exec(cb)
   },
   findByName: function (name, cb) {
-    return this.findOne({name: name}).exec(cb)
+    return this.findOne({ name: name }).exec(cb)
   }
 }
 

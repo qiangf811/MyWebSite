@@ -11,12 +11,12 @@
 </template>
 <script>
 export default {
-  name: "",
+  name: '',
   data: () => ({
-    defaultClass:'defaultClass'
+    defaultClass: 'defaultClass'
   }),
   methods: {
-    gotoAbout() {
+    gotoAbout () {
       console.log('do something')
     }
   }
@@ -25,7 +25,7 @@ export default {
 <style lang="stylus" scoped>
 .jumbotron
   height: 500px
-  background:url('~/assets/images/banner.jpg')
+  background:url('~assets/images/banner.jpg')
   background-size: 100%
   background-repeat: no-repeat
   .container

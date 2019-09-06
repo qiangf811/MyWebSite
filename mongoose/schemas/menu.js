@@ -14,10 +14,10 @@ MenuSchema.statics = {
     return this.find({}).sort('sort').exec(cb)
   },
   findById: function (id, cb) {
-    return this.findOne({_id: id}).exec(cb)
+    return this.findOne({ _id: id }).exec(cb)
   },
   findBySortDesc: function (cb) {
-    return this.find({}).sort({'sort': 'desc'}).exec(cb)
+    return this.find({}).sort({ 'sort': 'desc' }).exec(cb)
   }
 }
 

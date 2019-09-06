@@ -14,7 +14,7 @@ PhotoSchema.statics = {
     return this.find({}).sort('uploadAt').exec(cb)
   },
   findById: function (id, cb) {
-    return this.findOne({_id: id}).exec(cb)
+    return this.findOne({ _id: id }).exec(cb)
   }
 }
 

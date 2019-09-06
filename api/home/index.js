@@ -20,7 +20,7 @@ const saveSkill = (req, res) => {
         if (err) {
           return res.status(500)
         }
-        return res.json({status: 200, message: '保存成功'})
+        return res.json({ status: 200, message: '保存成功' })
       })
     } else {
       Skill.findOne({
@@ -30,7 +30,7 @@ const saveSkill = (req, res) => {
           return res.status(400).json(err)
         }
         if (row) {
-          return res.json({status: 300, message: '名称已存在'})
+          return res.json({ status: 300, message: '名称已存在' })
         } else {
           let skill = new Skill(_skill)
           skill.save((err, row) => {
@@ -38,13 +38,13 @@ const saveSkill = (req, res) => {
               console.log(err)
               return res.status(400).json(err)
             }
-            res.json({status: 200, message: '保存成功'})
+            res.json({ status: 200, message: '保存成功' })
           })
         }
       })
     }
   } else {
-    res.json({status: 500, message: '参数不正确'})
+    res.json({ status: 500, message: '参数不正确' })
   }
 }
 
@@ -56,12 +56,12 @@ const deleteSkill = (req, res) => {
       _id: id
     }, function (err) {
       if (err) {
-        res.json({status: 500, message: '删除用户失败'})
+        res.json({ status: 500, message: '删除用户失败' })
       }
-      res.json({status: 200, message: '删除用户成功'})
+      res.json({ status: 200, message: '删除用户成功' })
     })
   } else {
-    res.json({status: 500, message: '参数不正确'})
+    res.json({ status: 500, message: '参数不正确' })
   }
 }
 
@@ -80,7 +80,7 @@ const updateCardInfo = (req, res) => {
         if (err) {
           return res.status(500)
         }
-        return res.json({status: 200, message: '保存成功'})
+        return res.json({ status: 200, message: '保存成功' })
       })
     } else {
       let cardInfo = new CardInfo(_cardInfo)
@@ -89,11 +89,11 @@ const updateCardInfo = (req, res) => {
           console.log(err)
           return res.status(400).json(err)
         }
-        res.json({status: 200, message: '保存成功'})
+        res.json({ status: 200, message: '保存成功' })
       })
     }
   } else {
-    res.status(400).json({status: 500, message: '参数不正确'})
+    res.status(400).json({ status: 500, message: '参数不正确' })
   }
 }
 
@@ -125,7 +125,7 @@ const fetchIndexData = (req, res) => {
       }
     } catch (err) {
       console.log(err)
-      return {err}
+      return { err }
     }
   }
   fetchData().then(data => {

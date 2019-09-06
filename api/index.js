@@ -8,8 +8,10 @@ const noticeApi = require('./notice')
 const menuApi = require('./menu')
 const experienceApi = require('./experience')
 const uploadApi = require('./upload')
-const upload = multer({dest: 'uploads/'})
+const wechat = require('./wechat')
+const upload = multer({ dest: 'uploads/' })
 const tokenApi = require('./token')
+
 mongodb.connection()
 
 const app = express()
@@ -23,6 +25,10 @@ router.use((req, res, next) => {
   res.req = req
   next()
 })
+
+wechat.initwechat(app)
+router.get('/wx.do', wechat.wechatcheck)
+router.post('/wx.do', wechat.receiveMessage)
 
 // menu api
 router.get('/menu', menuApi.fetchMenu)

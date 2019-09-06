@@ -90,6 +90,7 @@ export default {
   }),
   methods: {
     rowClick (item, index, e) {
+      debugger
       if (e.target.className.includes('Delete')) {
         this.rowItem = item
         this.$refs.confirm.showModal()
