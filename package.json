@@ -32,7 +32,7 @@
     "jquery": "^3.4.1",
     "jsencrypt": "^3.0.0-rc.1",
     "moment": "^2.24.0",
-    "mongoose": "^5.0.13",
+    "mongoose": "^5.7.5",
     "multer": "^1.4.2",
     "node-jsencrypt": "^1.0.0",
     "nuxt": "latest",
