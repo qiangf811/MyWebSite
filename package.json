@@ -31,7 +31,7 @@
     "form-data": "^2.5.1",
     "jquery": "^3.4.1",
     "jsencrypt": "^3.0.0-rc.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.0.13",
     "multer": "^1.4.2",
     "node-jsencrypt": "^1.0.0",
